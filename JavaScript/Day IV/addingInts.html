@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function addingInts() {
+                if (arguments.length == 0) {
+                    throw ("You must at least enter 1 number");
+                }
+                var sum = 0;
+                for (i = 0; i < arguments.length; i++) {
+                    if (typeof arguments[i] != "number") {
+                        throw ("You must enter numbers only");
+                    }
+                    sum += arguments[i];
+                }
+                return sum;
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Sort</title>
+</head>
+<body>
+    <script>
+        var arr = [];
+        for(i = 0; i < 5; i++) {
+            arr[i] = prompt("Enter value number " + parseInt(i+1));
+        }
+        document.write("The values are: " + arr.join(", ")); 
+        
+        arr.sort(function(a, b) { return a - b; });
+        document.write("<br> Sorting ASC: " + arr.join(", ")); 
+        
+        arr.sort(function(a, b) { return b - a; });
+        document.write("<br> Sorting DSC: " + arr.join(", ")); 
+
+
+    </script>
+</body>
+</html>

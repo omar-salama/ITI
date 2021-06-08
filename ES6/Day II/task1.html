@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Object</title>
+</head>
+
+<body>
+    <script>
+
+        function courses(obj) {
+            var defaultObj = {
+                courseName: 'ES6',
+                courseDuration: '3 Hours',
+                courseOwner: 'JavaScript'
+            }
+            for (let key of Object.keys(obj)) {
+                    if (!defaultObj.hasOwnProperty(key))
+                        throw ('Some entered properties does not exist.')
+            }
+            var mergedObj = Object.assign({}, defaultObj, obj);
+            return `Course Name: ${mergedObj.courseName}, Course Duration: ${mergedObj.courseDuration}, Course Owner: ${mergedObj.courseOwner}`;
+        }
+        let react = courses({
+            courseName: 'React',
+            courseDuration: '6 Hours',
+            courseOwner: 'Facebook'
+        });
+        console.log(react);
+
+    </script>
+</body>
+
+</html>

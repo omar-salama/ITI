@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Letter Count</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        var check = prompt("What number to count?");
+        var response = prompt("Please enter a sentence.");
+        var insensitive = confirm("Do you want it to be case insensitive");
+        if (insensitive) {
+            response = response.toLocaleLowerCase();
+            check = check.toLocaleLowerCase();
+        }
+        var letters = response.split("");
+        for (i = 0; i < letters.length; i++) {
+            if (letters[i] == check) {
+                sum += 1;
+            }
+        }
+        alert(sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Custom HTML Validation</title>
+</head>
+<body>
+    <form method="">
+        <input type="text" placeholder="Username" pattern="^[a-zA-Z]+$" required oninvalid="usrErrMsg(event)">
+        <br /><span id="user-error" hidden></span>
+        <br /><input type="email" placeholder="Email" required oninvalid="emailErrMsg(event)">
+        <br /><span id="email-error" hidden></span>
+        <br /><input type="submit" value="Change">
+    </form>
+    <script>
+        var user = document.querySelector('input[type = text]');
+        var email = document.querySelector('input[type = email]');
+        var userErr = document.getElementById('user-error');
+        var emailErr = document.getElementById('email-error');
+        function usrErrMsg(e) {
+            e.preventDefault(); // prevent default popup from showing up
+            userErr.removeAttribute('hidden');
+            userErr.innerHTML = "Only alphabetical characters are allowed.";
+            user.style.borderColor = 'red';
+
+        }
+        function emailErrMsg(e) {
+            e.preventDefault();
+            emailErr.removeAttribute('hidden');
+            emailErr.innerHTML = "Invalid email format";
+            email.style.borderColor = 'red';
+        }
+    </script>
+</body>
+</html>

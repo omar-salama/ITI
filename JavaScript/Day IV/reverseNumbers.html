@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        // (function(arr){ // IIFE
+        //     return console.log([].reverse.apply(arr));
+        //     })([1,2,3,"sad", 4]);
+
+        // not function borrowing method
+        function arrReverse2(arr) {
+            var arr = [];
+            for (i = 0; i < arguments.length; i++) {
+                arr.push(arguments[i]);
+            }
+            return arr.reverse();
+        }
+
+        
+        // function arrReverse2() {
+        //     var result = [].reverse.bind(arguments);
+        //     return result();
+        // }
+
+        function arrReverse() {
+            return [].reverse.apply(arguments);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

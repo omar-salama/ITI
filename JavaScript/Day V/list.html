@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function List(start, end, step) {
+            var list = [];
+            Object.defineProperties(this ,{
+                append: {
+                    enumerable: false,
+                    writable: false,
+                    configurable: false,
+                    value: function (val) {
+                        if(list.indexOf(val) != -1) {
+                            throw ("Number already exists.");
+                        }
+                        if (step > 0 && (val > end || val < start)) {
+                            throw ("Inserted value is out of list range");
+                        }
+                        if (step < 0 && (val < end || val > start)) {
+                            throw ("Inserted value is out of list range");
+                        }
+                        var len = list.length;
+                        var lastElm = list[len - 1];
+                        if (len == 0 && val % step == 0) {
+                            list.push(val);
+                            return list;
+                        } else if (val - lastElm == step) {
+                            list.push(val);
+                            return list;
+                        } else if (list[0] - val == step) {
+                            list.unshift(val);
+                            return list;
+                        } else {
+                            throw ("Number is not in sequence");
+                        }
+                    }},
+                dequeue: {
+                    enumerable: false,
+                    writable: false,
+                    configurable: false,
+                    value: function () {
+                        list.shift();
+                        return list;
+                }},
+                pop: {
+                    enumerable: false,
+                    writable: false,
+                    configurable: false,
+                    value: function () {
+                        list.pop();
+                        return list;
+                }},
+
+            })
+        this.getList = function() {
+            return list;
+        }
+        return list;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

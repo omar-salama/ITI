@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Generator</title>
+</head>
+
+<body>
+    <script>
+        function *fibonacciByLen(len) {
+            let a = 0,
+                b = 1;
+            yield 0;
+            yield 1;
+            for (let i = 0; i < len - 2; i++) {
+                let next = a + b;
+                a = b;
+                b = next;
+                yield next;
+            }
+        }
+
+        function *fibonacciByMax(max) {
+            let a = 0,
+                b = 1;
+            yield 0;
+            yield 1;
+            let next = a + b;
+            do {
+                a = b;
+                b = next;
+                yield next;
+                next = a + b;
+            } while (next < max)
+        }
+    </script>
+</body>
+
+</html>

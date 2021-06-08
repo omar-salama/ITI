@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operatrions</title>
+</head>
+<body>
+    <script>
+
+        var arr = [];
+        for(i=0; i < 3; i++) {
+            arr[i] = parseInt(prompt("Enter value number " + parseInt(i+1)));
+        }
+        var arrSum   = arr[0] + arr[1] + arr[2];
+        var arrMulti = arr[0] * arr[1] * arr[2];
+        var arrDivid = arr[0] / arr[1] / arr[2];
+        
+        document.write("Sum: " + arr[0] + " + " + arr[1] + " + " + arr[2] + " = " + arrSum); 
+        document.write("<br> Multipication: " + arr[0] + " * " + arr[1] + " * " + arr[2] + " = " + arrMulti); 
+        document.write("<br> Division: " + arr[0] + " / " + arr[1] + " / " + arr[2] + " = " + arrDivid); 
+
+    </script>
+</body>
+</html>

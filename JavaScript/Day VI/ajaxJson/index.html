@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock Bands</title>
+</head>
+<body>
+    <h2>Select your favourite rock artist!</h2><hr><br>
+    <select name="bands" id="bands" onchange="getNames(this.value)">
+        <option>Select Band</option>
+    </select>
+    <select name="names" id="names" onchange="visitWebSite(this.value)">
+    <option>Select Artist</option>
+    </select>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+body {
+    background: #F0F0F0;
+}
+
+nav {
+    position: absolute;
+    right:0;
+    left: 0;
+}
+nav ul {
+    margin-bottom: 0;
+}
+nav ul a {
+    color: #777;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #fff;
+}
+@media (max-width: 1140px) { 
+    nav ul span.subscribe {
+        display: none;
+    }
+ }
+ @media (min-width: 1141px) { 
+    nav ul span.subscribe {
+        display: inline;
+    }
+ }
+
+
+/*------------------------------INTRODUCTION------------------------------*/
+.intro {
+    background: #467612 url("images/intro_background.png") repeat-x;
+    border-radius: 22px;
+    margin-top: 7rem;
+}
+.intro h2
+{
+    color: #fff;
+}
+
+.intro p {
+    color: #d9f499;
+}
+
+.intro img {
+    border-radius: 22px;
+}
+
+
+/*------------------------------BLOG POST------------------------------*/
+.blogPost header p, .blogPost header p a {
+    font-style: italic;
+    color: #777;
+}
+.blogPost header p a:hover {
+    text-decoration: none;
+    color: #000;
+}
+.blogPost img {
+    box-shadow: 3px 3px 7px #777;
+}
+
+
+
+/*------------------------------COMMENTS------------------------------*/
+#comments {
+    border-top: 1px solid #d7d7d7;
+}
+#comments article:nth-child(odd) {
+    background: #E3E3E3;
+    border: 1px solid #d7d7d7;
+    padding-top: 1.5em;
+    border-radius: 11px;
+}
+#comments article header a {
+    font-weight: bold;
+    color: #000;
+}
+#comments article header a:hover {
+    text-decoration: none;
+}
+
+/*------------------------------COMMENT FORM------------------------------*/
+#comments {
+    border-bottom: 1px solid #d7d7d7;
+}
+
+/*------------------------------SIDEBAR------------------------------*/
+aside section {
+    background: url("images/sidebar_section_background.png") repeat-x;
+    border-radius: 11px;
+}
+aside section ul {
+    list-style: none;
+}
+aside section ul li a {
+    text-decoration: none;
+    color: #000;
+}
+aside section ul li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/*------------------------------FOOTER------------------------------*/
+footer {
+    background: #222;
+    color: #777;
+}
+footer h3 {
+    color: #FFF;
+}      
+footer a {
+    color: #999;
+}      
+footer a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+footer ul {
+    list-style: square;
+    color: #565656;
+}

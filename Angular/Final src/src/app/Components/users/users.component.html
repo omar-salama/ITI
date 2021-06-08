@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped mt-5">
+    <thead>
+        <tr class="align-middle">
+            <th rowspan="2">#</th>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">Email</th>
+            <th colspan="2">Address</th>
+            <th rowspan="2">Details</th>
+            <th rowspan="2">Update</th>
+            <th rowspan="2">Delete</th>
+        </tr>
+        <tr>
+            <th>Street</th>
+            <th>City</th>
+        </tr>
+    </thead>
+        <tr app-table-row *ngFor="let user of users" [userDetails] = "user"></tr>
+</table>

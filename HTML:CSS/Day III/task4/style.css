@@ -1,0 +1,85 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+}
+#card {
+  position: relative;
+  height:350px;
+  width: 250px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 120px;
+  border: 3px solid black;
+  color: red;
+  border-radius: 8%;
+
+}
+#heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  top: 70px;
+  left: -60px;
+}
+#heart:before, #heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-225deg);
+  transform-origin: 0 100%;
+}
+#heart:after {
+  left: 0;
+  transform: rotate(225deg);
+  transform-origin: 100% 100%;
+}
+#triangle-up {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid red;
+  top: 180px;
+  left: 95px;
+
+}
+
+#spade{
+  font-size: 60px;
+  margin: auto;
+}
+
+.small-spade {
+  position: absolute;
+  font-size: 25px;
+}
+
+#ace-left {
+  position: relative;;
+  font-size: 30px;
+  top: 10px;
+  left: -95px;
+}
+.left {
+  left:20px;
+  top: 40px;
+}
+#ace-right {
+  position: absolute;
+  font-size: 30px;
+  bottom: 10px;
+  left: 210px;
+  transform:rotate(-180deg);
+}
+.right {
+  transform:rotate(-180deg);
+  left: 212px;
+  top: 280px;
+}
+

@@ -1,0 +1,11 @@
+label {
+  color: darkcyan;
+}
+.btn {
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
+.btn:hover {
+    background-color: #fff;
+    color: darkcyan;
+}

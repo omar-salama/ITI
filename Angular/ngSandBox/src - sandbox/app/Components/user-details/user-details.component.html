@@ -1,0 +1,31 @@
+<a routerLink="/users" class="ms-5 mt-3 d-block">&lt;&lt; Back to list</a>
+<table class="table table-bordered w-50 mx-auto mt-5" *ngIf="user">
+  <tr>
+    <th>Name</th>
+    <td>{{ user.name }}</td>
+  </tr>
+  <tr>
+    <th>Username</th>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{ user.email }}</td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td>{{ user.address.street }}, {{ user.address.city }}</td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td>{{ user.phone }}</td>
+  </tr>
+  <tr>
+    <th>Website</th>
+    <td>{{ user.website }}</td>
+  </tr>
+  <tr>
+    <th>Company</th>
+    <td>{{ user.company.name }}</td>
+  </tr>
+</table>

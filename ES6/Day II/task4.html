@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterable Objects</title>
+</head>
+
+<body>
+    <script>
+        obj = {
+            fName: 'Omar',
+            lName: 'Salama',
+            skills: ['PHP', 'JS', 'ES6'],
+
+            [Symbol.iterator]: function () {
+                let properties = Object.entries(this);
+                let count = 0;
+                let isDone = false;
+                return {
+                    next: () => {
+                        if (count >= properties.length) {
+                            isDone = true;
+                        }
+                        return {
+                            done: isDone,
+                            value: properties[count++]
+                        };
+                    }
+                }
+            }
+        };
+
+        for (let [val, prop] of obj) {
+            console.log(`${val} => ${prop}`);
+        }
+    </script>
+</body>
+
+</html>

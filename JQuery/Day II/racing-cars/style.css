@@ -1,0 +1,23 @@
+.content {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+}
+#raceTrack {
+
+    height: 384px;
+    display: block;
+    margin-bottom: 15px;
+    border-right: 10px dashed #d3d3d3;
+    background-color:#2a2a2a;
+}
+.car {
+    height: 192px;
+    display: block;
+    position: relative;
+    left: 0;
+}
+
+#action input {
+    margin-right: 15px;
+}

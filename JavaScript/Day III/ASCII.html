@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body onkeydown="myFunction(event)">
+
+    <h3>Press a key get its ASCII.</h3>
+
+    <script>
+        function myFunction(event) {
+            var x = event.keyCode;
+            var msg = "The Unicode value is: " + x;
+            
+            switch(x) {
+                case 16:
+                    prsdKey = "SHIFT";
+                break;
+                case 17:
+                    prsdKey = "CTRL";
+                    break;
+                case 18:
+                    prsdKey = "ALT";
+                    break;
+            }
+            var prsdKey;
+            if (!prsdKey == "")
+                msg += " --> It is " + prsdKey + " key";
+            alert(msg);
+        }
+    </script>
+
+</body>
+</html>
+

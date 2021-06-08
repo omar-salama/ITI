@@ -1,0 +1,32 @@
+<div class="w-50 mx-auto mt-5">
+  <form [formGroup]="registerForm">
+    <div class="input-group">
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        placeholder="Name"
+      />
+    </div>
+    <span *ngIf="!validName() && registerForm.get('name')?.touched"
+      >Name must be at least 3 characters!</span
+    >
+    <div class="input-group">
+      <input
+        formControlName="age"
+        type="number"
+        class="form-control mt-2"
+        placeholder="Age"
+      />
+    </div>
+    <span *ngIf="!validAge() && registerForm.get('age')?.touched"
+      >Age must be between 21 and 50!</span
+    >
+    <input
+      class="btn btn-secondary mt-2 d-block"
+      type="button"
+      value="Register"
+      (click)="sendData()"
+    />
+  </form>
+</div>

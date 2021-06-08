@@ -1,0 +1,52 @@
+<form
+  [formGroup]="updateUser"
+  (ngSubmit)="onSubmit()"
+  action="post"
+  class="w-50 text-start mx-auto"
+>
+  <div class="row mb-3 mt-3">
+    <label class="col-2 col-form-label">Username</label>
+    <div class="col-10">
+      <input formControlName="username" type="text" class="form-control" />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-2 col-form-label">Full Name</label>
+    <div class="col-10">
+      <input formControlName="name" type="text" class="form-control" />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-2 col-form-label">Email</label>
+    <div class="col-10">
+      <input formControlName="email" type="email" class="form-control" />
+    </div>
+  </div>
+  <div formGroupName="address">
+    <div class="row mb-3">
+      <label class="col-2 col-form-label">City</label>
+      <div class="col-10">
+        <input formControlName="city" type="city" class="form-control" />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label class="col-2 col-form-label">Street</label>
+      <div class="col-10">
+        <input formControlName="street" type="street" class="form-control" />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label class="col-2 col-form-label">Zip Code</label>
+      <div class="col-10">
+        <input formControlName="zipcode" type="zipcode" class="form-control" />
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-2 col-form-label">Phone</label>
+    <div class="col-10">
+      <input formControlName="phone" type="text" class="form-control" />
+    </div>
+  </div>
+  <input type="submit" value="Add" [disabled] = "updateUser.invalid" class="btn btn-primary px-3" />
+</form>

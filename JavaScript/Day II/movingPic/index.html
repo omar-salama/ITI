@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Moving Picture</title>
+    <style>
+        .box {
+            border: 3px solid black;
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+        img {
+            position: absolute;
+        }
+        #leftImg {
+            top: 220px;
+            left: 1px;
+        }
+        #rightImg {
+            top: 220px;
+            right: 1px;
+        }
+        #bottomImg {
+            bottom: 1px;
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="icon1.gif" id="leftImg">
+        <img src="icon2.gif" id="rightImg">
+        <img src="TOP.JPG" id="bottomImg">
+    </div>
+    <input type="button" value="Start" onclick="animateImgs()">
+    <input type="button" value="Stop" onclick="stopAnimation()">
+    <script src="script.js"></script>
+</body>
+</html>

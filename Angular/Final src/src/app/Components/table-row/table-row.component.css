@@ -1,0 +1,8 @@
+.actions {
+    min-width: 90px;
+}
+.actions:hover {
+    font-weight: 600;
+    font-size: 1.05em;
+    cursor: pointer;
+}

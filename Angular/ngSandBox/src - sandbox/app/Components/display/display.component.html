@@ -1,0 +1,16 @@
+<table class="table w-50 mx-auto mt-5">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let display of displayData; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{display.name}}</td>
+            <td>{{display.age}}</td>
+        </tr>
+    </tbody>
+</table>

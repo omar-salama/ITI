@@ -1,0 +1,25 @@
+<table class="table table-bordered table-striped table-responsive align-middle w-50 mx-auto mt-5">
+    <thead [appRestyle] = "{bgColor: 'pink', fgColor: 'slateblue', fFamily: 'georgia'}">
+        <tr class="align-middle">
+            <th appRestyle rowspan="2">#</th>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">Email</th>
+            <th colspan="2">Address</th>
+            <th rowspan="2">More Info</th>
+        </tr>
+        <tr>
+            <th>Street</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name | toLower}}</td>
+            <td>{{user.email | toLower}}</td>
+            <td>{{user.address.street | toLower}}</td>
+            <td>{{user.address.city | toLower}}</td>
+            <td class="details" routerLink="{{user.id}}"><i class="bi bi-info-lg"></i></td>
+        </tr>
+    </tbody>
+</table>

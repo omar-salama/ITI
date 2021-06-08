@@ -1,0 +1,25 @@
+<div>
+    <h2>Add new entry</h2>
+    <input type="text" placeholder="Name" [(ngModel)] = "name">
+    <div class="error" *ngIf="!isNameValid">
+        Name must be of at least 3 characters!
+    </div>
+    <input type="number" placeholder="Age" [(ngModel)] = "age">
+    <div class="error" *ngIf="!isAgeValid">
+        Age must be between 18 and 50!
+    </div>
+    <input type="button" value="Add" (click) = "addEntry()">
+    <h2>Entries</h2>
+</div>
+<table>
+    <tr>
+        <th>#</th> 
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor="let s of students; index as i">
+        <td>{{i+1}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.age}}</td>
+    </tr>
+</table>

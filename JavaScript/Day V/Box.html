@@ -1,0 +1,62 @@
+<html>
+<body>
+<script>
+function Books(title, numofChapters, author, numofPages, publisher) {
+    this.title = title;
+    this.numofChapters = numofChapters;
+    this.author = author;
+    this.numofPages = numofPages;
+    this.publisher = publisher;
+}
+
+function Box(height, width, length, material) {
+    this.height = height;
+    this.width = width;
+    this.length = length;
+    this.addBooks = function () {
+        this.content = new Array(arguments.length); 
+        for(i = 0; i < arguments.length; i++) {  
+            this.content[i] = arguments[i];
+        } 
+        this.booksCount = this.content.length;
+    }
+    this.removeBook = function(bookName) {
+        for(i = 0; i < this.content.length; i++) {  
+            if (this.content[i].title == bookName) {
+                this.content.splice(i, 1);
+                this.booksCount--;
+            }
+        } 
+    }
+    this.toString = function() {
+        return `Height: ${this.height} Width: ${this.width} Length: ${this.length}`;
+    }
+    this.valueOf = function() {
+        return this.content.length;
+    }
+}
+
+
+var js = new Books('JavaScript For Dummies', 26, "Emily A. Vander Veer", 386, "John Wiley & Sons, Inc.");
+var got = new Books('Game of Thrones', 8, "George R. R. Martin", 653, "HBO");
+var gg = new Books('Gone Girl', 5, "Gilian Flynn", 432, "Crown Publishing Group");
+
+var box1 = new Box(30, 20, 10, "wood");
+var box2 = new Box(50, 40, 30, "wood");
+
+box1.addBooks(js);
+box2.addBooks(got, gg);
+
+function totalBooks() {
+    var sum = 0;
+    for (var member in window) {
+        if (window[member] instanceof Box) {
+            booksCount = window[member].valueOf();
+            sum += booksCount;
+        }
+    }
+    return sum;
+}
+
+</script>
+</body>

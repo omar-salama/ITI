@@ -1,0 +1,18 @@
+table {
+    text-align: center;
+}
+td {
+    white-space: nowrap;
+    padding: 15px 10px;
+}
+.details {
+    cursor: pointer;
+}
+.details:hover {
+    color: #fff;
+    background-color: darkcyan;
+
+}
+/* th {
+    color: darkcyan;
+} */

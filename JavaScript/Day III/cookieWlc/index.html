@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        label {
+            display: inline-block;
+            width:60px;
+            text-align: left;
+        }
+        img {
+            height: 200px;
+        }
+    </style>
+    <script src="cookies.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <label>Name</label><input type="text" name="name" id="name"><br>
+    <label>Age</label><input type="text" name="age" id="age"><br><br>
+    <p>Please select your gender: </p>
+    <input type="radio" name="gender" value="male"><img src="1.jpg" alt="male">
+    <input type="radio" name="gender" value="female"><img src="2.jpg" alt="female"><br><br>
+    <p>Please select your favourite colour.</p>
+    <select name="favColor" id="favColor">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
+    <button onclick="register()">Register</button>
+</body>
+</html>

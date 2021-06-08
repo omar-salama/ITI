@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+
+        var str = prompt("Enter a word to check.");
+        var length = str.length;
+        var isPalindrome = true;
+
+        var insensitive = confirm("Do you want it to be case insensitive");
+        if (insensitive) {
+            str = str.toLocaleLowerCase();
+        }
+
+        for (var i = 0; i < length / 2; i++) {
+            if (str[i] !== str[length - 1 - i]) {
+                var isPalindrome = false;
+            }
+        }
+
+        isPalindrome ? alert ("It is a palindrome") : alert ("It is not a palindrome");
+
+    </script>
+</body>
+</html>

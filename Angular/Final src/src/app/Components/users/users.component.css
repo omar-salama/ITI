@@ -1,0 +1,9 @@
+/* .fix-table {
+    display: contents;
+} */
+table th {
+    color: darkcyan;
+}
+tr[app-table-row]:hover {
+    background-color: #f6f6f6;
+}

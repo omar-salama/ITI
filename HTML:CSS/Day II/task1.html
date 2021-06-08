@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Goal</title>
+</head>
+<body>
+    <canvas id="canvas" width="900" height="500" style="border: 2px solid black;"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        // blue gradient
+        var grd = context.createLinearGradient(450, 50, 450, 250);
+        grd.addColorStop(0, 'deepskyblue');
+        grd.addColorStop(1, 'white');
+        context.fillStyle = grd;
+        context.fillRect(100, 50, 700, 200)
+        // green gradient
+        var grd = context.createLinearGradient(450, 200, 450, 500);
+        grd.addColorStop(0, 'limegreen');
+        grd.addColorStop(1, 'white');
+        context.fillStyle = grd;
+        context.fillRect(100, 250, 700, 200)
+        // draw goal corners
+        context.moveTo(300, 300);
+        context.lineTo(300, 150);
+        context.lineTo(600, 150);
+        context.lineTo(600, 300);
+        context.lineWidth = 3;
+        // make it transparent from the bottom
+        var grd = context.createLinearGradient(300, 300, 300, 150);
+        grd.addColorStop(0, "transparent");
+        grd.addColorStop(0.75, "black");
+        context.strokeStyle = grd;
+        context.stroke()
+    </script>
+</body>
+</html>

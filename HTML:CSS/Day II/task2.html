@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Avatar Litter</title>
+</head>
+<body>
+    <canvas id="avatar" width="500" height="500"></canvas>
+    <script>
+        var context = avatar.getContext('2d');
+        // outter arc
+        context.arc(250, 250, 250, 0, 2 * Math.PI);
+        var grd = context.createRadialGradient(400, 250, 1, 250, 250, 250);
+        grd.addColorStop(0.1, 'white');
+        grd.addColorStop(1, 'pink');
+        context.fillStyle = grd;
+        context.fill();
+        context.beginPath();
+        // inner arc
+        context.arc(250, 250, 180, 0, 2 * Math.PI);
+        var grd = context.createRadialGradient(50, 100, 40, 150, 150, 500);
+        grd.addColorStop(0, 'white');
+        grd.addColorStop(.25, 'pink');
+        context.fillStyle = grd;
+        context.fill();
+
+        context.font = "320pt Georgia";
+        context.fillStyle = "#f1f1f1";
+        context.fillText("O", 90, 398);
+
+        
+    </script>
+</body>
+</html>

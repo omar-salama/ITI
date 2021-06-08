@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array API</title>
+</head>
+<body>
+    <script>
+        let fruits = ['apple', 'strawberry', 'banana', 'orange', 'magno'];
+        console.log(fruits.every(element => typeof element === 'string'));
+        console.log(fruits.some(element  => element.startsWith('a')));
+        let res = fruits.filter(element  => element.startsWith('a') || element.startsWith('b'));
+        console.log(res);
+
+        let love = res.map(element => `I love ${element}`);
+        console.log(love);
+        love.forEach(element => console.log(element));
+    </script>
+</body>
+</html>

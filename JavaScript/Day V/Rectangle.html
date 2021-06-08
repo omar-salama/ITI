@@ -1,0 +1,58 @@
+<html>
+<head>
+<script>
+var hasRecInstance = false;
+var hasSqInstance = false;
+function Shape(width, height) {
+    if (this.constructor == Shape)
+        throw ("Not allowed to create an instance of Shape.");
+    this.width = width;
+    this.height = height;   
+}
+Shape.prototype.area = function() {
+    return this.width * this.height;
+}
+Shape.prototype.perimeter = function() {
+    return 2 * (this.width + this.height);
+}
+Shape.prototype.toString = function() {
+return `Width: ${this.width} Height: ${this.height} Area: ${this.area()} Perimeter: ${this.perimeter()}`;
+}
+
+var hasRecInst = false;
+function Rectangle(width, height) {
+    // Prevent creating multiple instances
+    if (hasRecInst && this.constructor == Rectangle) 
+        throw ("Only one instance of Rectangle is allowed.")
+    if (this.constructor == Rectangle) {
+        hasRecInst = true;
+        Rectangle.instances++;
+    }
+
+    Shape.call(this, width, height);
+    
+    Rectangle.getInstancesNo = function() {
+        return Rectangle.instances;
+    }
+}
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.constructor = Rectangle;
+
+var hasSqInst = false
+function Square(side) {
+    if (hasSqInst)
+        throw ("Only one instance of Square is allowed.")
+    hasSqInst = true;
+    Rectangle.call(this, side, side);
+}
+Square.prototype = Object.create(Rectangle.prototype);
+Square.prototype.constructor = Square;
+Square.prototype.perimeter = function() {
+    return 4 * this.width;
+}
+
+Rectangle.instances = 0;
+
+</script>
+</head>
+</html>

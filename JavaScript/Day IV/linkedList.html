@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        var myObj = {};
+
+        Object.defineProperties(myObj,{
+            arr: {
+                value: []
+            },
+            // curr: {
+            //     value: 0,
+            //     writable: true
+            // },
+            enqueue: {
+                value: function (val) {
+                    if (val.toString().length > 1) {
+                        throw ("Only single digits allowed.")
+                    }
+                    if(this.arr.indexOf(val)==-1) {
+                        if(this.arr.length == 0) {
+                            this.arr.splice(0,0, val);
+                            return this.arr;
+                        }
+                        var len = this.arr.length;
+                        for (var curr = 0; curr < len; curr++) {
+                            // console.log(curr);
+                            if (val < this.arr[curr]) {
+                                this.arr.splice(curr,0, val);
+                                return this.arr;
+                            }
+                        }
+                        for (var curr = 0; curr < len; curr++) {
+                                // console.log(curr);
+                                if (val > this.arr[curr]) {
+                                    this.arr.push(val);
+                                    return this.arr;
+                                }
+                        }
+                    } else {
+                        throw ("Number already exists.");
+                    }
+
+                }},
+            dequeue: {
+                value: function () {
+                    this.arr.shift();
+                    return this.arr;
+            }},
+            pop: {
+                value: function () {
+                    this.arr.pop();
+                    return this.arr;
+            }},
+            removeItem: {
+                value: function (i) {
+                    if (i > this.arr.length - 1) {
+                        throw ("Data not found.")
+                    }
+                    this.arr.splice(i,1);
+                    return this.arr;
+                }},
+            insertItem: {
+                value: function (val,i) {
+                    if (val.toString().length > 1) {
+                        throw ("Only single digits allowed.")
+                    }
+                    if(this.arr.indexOf(val)==-1){
+                        if (i == 0 && val < this.arr[i]) {
+                            this.arr.splice(i,0,val);
+                        }
+                        else if (i == this.arr.length - 1 && val > this.arr[i]) {
+                            this.arr.splice(i+1,0,val);
+                        }
+                        else if (val > this.arr[i-1] && val < this.arr[i]) {
+                            this.arr.splice(i,0,val);
+                        } else {
+                            throw ("Wrong place!");
+                        } 
+                    } else {
+                        throw ("Number already exists in the list.");
+                    }
+                    return this.arr;
+                }}
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

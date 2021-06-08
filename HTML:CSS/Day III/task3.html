@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Canvas Image</title>
+</head>
+<body>
+    <canvas width="800" height="800"></canvas>
+    <script>
+        var img = new Image();
+        img.src = 'https://i1.sndcdn.com/artworks-000585118994-g9y4nv-t500x500.jpg';
+        var canvas  = document.getElementsByTagName('canvas')[0];
+        var context = canvas.getContext('2d');
+
+        img.addEventListener('load', function() {
+            context.drawImage(img, 20, 20, 500, 500);
+            context.font = '32pt Arial';
+            context.fillStyle = 'rgba(0,34,285, 0.7)';
+            context.shadowOffsetX = 3;
+            context.shadowOffsetY = 3;
+            context.shadowColor = "rgba(255,255,255, 0.4)";
+            context.fillText("What a Ride!", 40, 200);
+    });
+    </script>
+</body>
+</html>

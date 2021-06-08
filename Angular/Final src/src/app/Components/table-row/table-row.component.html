@@ -1,0 +1,10 @@
+<!-- <tr *ngFor="let user of users"> -->
+    <td>{{userDetails.id}}</td>
+    <td>{{userDetails.name}}</td>
+    <td>{{userDetails.email}}</td>
+    <td>{{userDetails.address.street}}</td>
+    <td>{{userDetails.address.city}}</td>
+    <td class="actions text-primary" [routerLink]="userDetails.id"><a>Info</a></td>
+    <td class="actions text-primary" routerLink="/update-user/{{userDetails.id}}"><a>Edit</a></td>
+    <td class="actions text-danger" (click) = "deleteUser(userDetails.id, userDetails.name)"><a>Delete</a></td>
+<!-- </tr> -->

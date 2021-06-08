@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Line Drawing</title>
+</head>
+<body>
+    <canvas id="line" width="400" height="400" style="border: 2px solid black;"></canvas>
+    <script>
+        var line = document.getElementById('line');
+        var context = line.getContext('2d');
+        var inc = 0;
+        context.beginPath();
+        context.moveTo(0,0);
+        var int = setInterval(function() {
+            var x = y = 100;
+            if (inc < 400) {
+                context.lineTo(x + inc, y + inc);
+                inc += 100;
+                context.stroke();
+            } else {
+                clearInterval(int);
+                alert("That's all folks.");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

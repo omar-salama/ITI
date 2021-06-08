@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+function firstUpperCase(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getSetGen() {
+    for(var i in this) {
+        if((this[i] instanceof Function)) {
+            break;
+        }
+        Object.defineProperty(this, 'get' + firstUpperCase(i),
+        {
+            value: (function (propName){
+                return function(){
+                    return this[propName];
+                }
+            })(i)
+        });
+        Object.defineProperty(this, 'set' + firstUpperCase(i),
+        {
+            value: (function(propName) { 
+                return function( val) {
+                    this[propName] = val;
+                }
+            })(i)
+        });
+    }   
+}
+
+
+obj = {id:"SD-10",location:"Cairo", addr:"123 st.", getSetGen: getSetGen};
+obj.getSetGen();
+var person = {name: "omarSalama", age: 22};
+obj.getSetGen.apply(person);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

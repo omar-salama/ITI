@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Pink Floyd</title>
+</head>
+<body>
+    <div id="video-container">
+        <h2>Comfortably Numb By Pink Floyd</h2>
+        <video id="video" width="720">
+          <source src="pinkFloyd.mp4" type="video/mp4">
+        </video>
+
+        <div id="video-controls">
+          <button type="button" id="play-pause">Play</button>
+          <button type="button" id="skip-backward">&lt;&lt;</button>
+          <button type="button" id="skip-forward">&gt;&gt;</button>
+          <input type="range" id="seek-bar" value="0" style="width: 605px"><br /><br />
+          <button type="button" id="mute">Mute</button>
+          <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1"><br />
+          &nbsp;Speed&nbsp; <input type="range" id="speed-bar" min="1" max="2" step="0.25" value="1">
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factory</title>
+  </head>
+  <body>
+      <script src="Testing.js"></script>
+      <script src="Developing.js"></script>
+      <script src="QualityControl.js"></script>
+      <script src="Designers.js"></script>
+    <script>
+      function Employees() {
+    var employees = [];
+    this.createEmp = function (name, type, isLeader=false) {
+      switch (type) {
+        case "Developer":
+          employees.push(new Developing(name, isLeader));
+          break;
+        case "Tester":
+          employees.push(new Testing(name, isLeader));
+          break;
+        case "Quality Control":
+          employees.push(new QualityControl(name, isLeader));
+          break;
+        case "Designer":
+          employees.push(new Designers(name, isLeader));
+          break;
+      }
+    };
+    this.getEmployees = function() {
+        return employees;
+    }
+  }
+
+  var emps = new Employees();
+  var emp1 = emps.createEmp("Omar", "Developer", true);
+  var emp1 = emps.createEmp("Abyu", "Developer");
+  var emp2 = emps.createEmp("Pablo", "Tester");
+  var emp3 = emps.createEmp("Ess", "Designer", true);
+    var emp1 = emps.createEmp("Ahmed", "Designer", true);
+
+  console.log(emps.getEmployees());
+    </script>
+  </body>
+</html>
