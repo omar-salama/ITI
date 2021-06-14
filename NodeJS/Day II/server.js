@@ -1,33 +1,37 @@
 const http = require("http");
-const fs = require("fs");
+const fs = require("fs/promises");
 let files;
 
-fs.readdir("./resources", (err, res) => {
-  if (err) console.log(err);
-  files = res;
-});
+fs.readdir("./resources")
+  .then((data) => {
+    files = data;
+  })
+  .catch((err) => {
+    throw err;
+  });
 
 http
   .createServer((req, res) => {
-    // res.writeHead('200');
-    const url = req.url;
-    switch (url) {
+    switch (req.url) {
       case "/":
-        res.setHeader("content-type", "text/html");
+        res.writeHead(200, { "content-type": "text/html" });
         files.map((file) => {
           res.write(`<li><a href="${file}">${file}</a></li><br>`);
         });
-        console.log(files);
         res.end();
         break;
       default:
-        files.find((u) => {
-          if (`/${u}` == url) {
-            fs.readFile(`./resources/${u}`, (err, file) => {
-              if (err) console.log(err);
-              res.write(file);
-              res.end();
-            });
+        files.find((url) => {
+          res.writeHead(200, { "content-type": "text/html" });
+          if (`/${url}` == req.url) {
+            fs.readFile(`./resources/${url}`)
+              .then((file) => {
+                res.write(file);
+                res.end();
+              })
+              .catch((err) => {
+                throw err;
+              });
           }
         });
         break;
