@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Todo = mongoose.model("Todo", {
+const Task = mongoose.model("Tasks", {
   title: {
     type: String,
     required: true,
@@ -11,7 +11,8 @@ const Todo = mongoose.model("Todo", {
   status: {
     type: String,
     enum: ["DONE", "INPROGRESS", "PENDING"],
+    default: "PENDING",
   },
   body: String,
 });
-module.exports = Todo;
+module.exports = Task;
