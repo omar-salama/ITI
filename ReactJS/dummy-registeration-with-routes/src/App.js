@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Home } from "./components/Home"
+import { AboutUs } from "./components/AboutUs"
 import Register from "./components/Register"
+import NotFound from "./components/NotFound"
 import { Switch, Route } from "react-router-dom";
 
 
@@ -11,11 +11,14 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          <Home />
+        <Route path="/about-us">
+          <AboutUs />
         </Route>
-        <Route path="/register">
+        <Route exact path="/">
           <Register />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </div>
