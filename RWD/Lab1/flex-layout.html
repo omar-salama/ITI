@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        #main {
+            display: flex;
+            flex: 1;
+        }
+
+        #main>article {
+            flex: 1;
+        }
+
+        #main>nav,
+        #main>aside {
+            flex: 0 0 20vw;
+        }
+
+        #main>nav {
+            order: -1;
+        }
+
+        header,
+        footer {
+            background: darkcyan;
+            height: 10vh;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        .img {
+            width: 100%;
+            height: 200px;
+            border: 2px solid white;
+            background-size: 100%;
+        }
+
+        nav {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .video {
+            width: 100%;
+            background-size: 100%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            aside {
+                display: none;
+            }
+
+            article {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (max-width: 425px) {
+            nav {
+                display: none;
+            }
+
+            article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header style="text-align: center; font-size: 30px; font-family: 'Courier New', Courier, monospace; color: white; font-weight: bold;">Header</header>
+    <div id="main">
+        <article>
+            <ul>
+                <li style="list-style: square;">Name</li>
+                <li style="list-style: square;">Age</li>
+                <li style="list-style: square;">Address</li>
+            </ul>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus molestiae expedita quos omnis. A
+                nesciunt quos praesentium sunt quidem! Obcaecati alias asperiores error excepturi reprehenderit ratione
+                voluptatem itaque facere! Dolores?</p>
+        </article>
+        <nav>
+            <video src="vid.mp4" class="video" controls></video>
+        </nav>
+        <aside><img src="img.png" class="img"></aside>
+    </div>
+    <footer style="text-align: center; font-size: 30px; font-family: 'Courier New', Courier, monospace; color: white; font-weight: bold;">Footer</footer>
+</body>
+
+</html>
