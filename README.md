@@ -1,6 +1,6 @@
-# ITI-labs
-The tasks and solutions I came up with during my Intensive Code Camp Program.
-## Courses
+# ITI Labs
+The tasks and solutions I came up with during the ITI's Intensive Code Camp Program.
+## Recorded Sessions
 - [HTML & CSS][html]
 - [JavaScript][JS]
   - [External Resources][ResJS]
@@ -15,6 +15,7 @@ The tasks and solutions I came up with during my Intensive Code Camp Program.
   - [External Resources][ResTS]
 - [Angular][ANGLR]
 - [Node.js][NDJS]
+- [React][RCT]
 ## Elective Courses
 - [Deep Learning][DL]
 - [Software Testing][ST]
@@ -37,6 +38,7 @@ The tasks and solutions I came up with during my Intensive Code Camp Program.
 [ResTS]:https://maharatech.gov.eg/course/view.php?id=976
 [ANGLR]:https://drive.google.com/drive/folders/1P9oh_Tv0SghI5zfAUe9neJLQKdzbaRMh
 [NDJS]:https://drive.google.com/drive/folders/11x_Tt9vzkC5yCweVBE5skDi6Sg9YWk8w
+[RCT]:https://drive.google.com/drive/folders/1inwaZ-tAB8lLovvNhwvia2d-_vcYRDhR
 [DL]:https://maharatech.gov.eg/course/view.php?id=1006
 [BC]:https://maharatech.gov.eg/course/view.php?id=996
 [ST]:https://maharatech.gov.eg/course/view.php?id=990
