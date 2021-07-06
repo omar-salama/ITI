@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Missions</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+      <header>
+          <h1>Space Missions</h1>
+        </header>
+        <main>
+        <button onclick="Back()">Back</button>
+      <section>
+        <button id="installBtn">Install App</button>
+      </section>
+      <section class="card">
+        <div class="img-container">
+          <!-- CC0 image from https://unsplash.com/photos/NuE8Nu3otjo -->
+          <img
+            src="images/space1.jpg"
+            alt="The earth as caputured from space, illumnitated by cosmic radiation"
+          />
+        </div>
+        <p>
+          Bavarian bergkase port-salut ricotta. Cheese on toast say cheese
+          cheese strings pecorino fromage frais roquefort danish fontina
+          emmental. Bishop everyone loves jarlsberg stilton swiss cauliflower
+          cheese fondue wiss. Cottage cheese lancashire taleggio goat parmesan.
+        </p>
+      </section>
+      <section class="card">
+        <div class="img-container">
+          <!--CC0 image from https://unsplash.com/photos/cIX5TlQ_FgM -->
+          <img
+            src="images/space2.jpg"
+            alt="Looking through the inside of space equipment"
+          />
+        </div>
+        <p>
+          Bavarian bergkase port-salut ricotta. Cheese on toast say cheese
+          cheese strings pecorino fromage frais roquefort danish fontina
+          emmental. Bishop everyone loves jarlsberg stilton swiss cauliflower
+          cheese fondue wiss. Cottage cheese lancashire taleggio goat parmesan.
+        </p>
+      </section>
+      <section class="card">
+        <div class="img-container">
+          <!-- CC0 image from https://unsplash.com/photos/n463SoeSiVY -->
+          <img
+            src="images/space3.jpg"
+            alt="A spacecraft launches into the night sky"
+          />
+        </div>
+        <p>
+          Bavarian bergkase port-salut ricotta. Cheese on toast say cheese
+          cheese strings pecorino fromage frais roquefort danish fontina
+          emmental. Bishop everyone loves jarlsberg stilton swiss cauliflower
+          cheese fondue wiss. Cottage cheese lancashire taleggio goat parmesan.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <ul class="flex-list">
+        <li><a href="#home">home</a></li>
+        <li><a href="#share">share</a></li>
+        <li><a href="#contact">contact</a></li>
+        <li><a href="another.html">about</a></li>
+      </ul>
+    </footer>
+
+    <script>
+      function Back() {
+        location.assign("../index.html");
+      }
+
+      let _prompt;
+    window.addEventListener('beforeinstallprompt',event=>{
+      event.preventDefault();
+      _prompt =event;
+      document.querySelector("#installBtn").addEventListener('click',event=>{
+        _prompt.prompt();
+        _prompt.userChoice.then(choiceResult=>{
+          if(choiceResult=="accepted"){
+            console.log("Done")
+          }
+          else{
+            console.log("Thanks")
+          }
+        })
+      })
+    })
+
+    </script>
+  </body>
+</html>
